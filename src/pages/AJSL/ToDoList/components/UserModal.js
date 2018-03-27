@@ -3,6 +3,8 @@ import { Modal, Form, Input } from 'antd';
 
 const FormItem = Form.Item;
 
+
+//有生命周期的组件，非纯函数
 class UserEditModal extends Component {
 
   constructor(props) {
@@ -93,4 +95,4 @@ class UserEditModal extends Component {
   }
 }
 
-export default Form.create()(UserEditModal);
+export default Form.create()(UserEditModal);//antd写法

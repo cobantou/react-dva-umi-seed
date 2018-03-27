@@ -4,12 +4,15 @@
     "start": "umi dev",
     "build": "umi build",
     "lint": "eslint --ext .js src test",
+    "server": "cd dist && serve",
     "precommit": "npm run lint"
   },
   "dependencies": {
     "dva": "^2.1.0",
-    "umi": "^1.0.0-0",
-    "umi-plugin-dva": "^0.1.5"
+    "less-vars-to-js": "^1.2.1",
+    "mockjs": "^1.0.1-beta3",
+    "umi": "^1.1.2",
+    "umi-plugin-dva": "^0.4.0"
   },
   "devDependencies": {
     "eslint": "^4.14.0",
@@ -18,6 +21,7 @@
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
-    "husky": "^0.12.0"
+    "husky": "^0.12.0",
+    "serve": "^6.5.3"
   }
 }

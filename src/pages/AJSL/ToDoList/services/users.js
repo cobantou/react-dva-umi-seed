@@ -1,8 +1,9 @@
 import { PAGE_SIZE } from '../../../../utils/constants';
 import request from '../../../../utils/request';
 
+//
 export function fetch({ page = 1 }) {
-  return request(`/api/users?_page=${page}&_limit=${PAGE_SIZE}`);
+  return request(`/mock/api/users?_page=${page}&_limit=${PAGE_SIZE}`);
 }
 
 export function remove(id) {

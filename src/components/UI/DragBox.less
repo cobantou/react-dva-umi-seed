@@ -1,0 +1,28 @@
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.box1{
+  width: 500px;
+  overflow: hidden;
+}
+
+.box2{
+  flex:1;
+  overflow: hidden;
+}
+
+.dragbar{
+  width: 8px;
+  height: 100%;
+  background-color: #096dd9;
+  cursor: w-resize;
+}
+
+:global{
+  .noUserSelect{
+    user-select: none;
+  }
+}

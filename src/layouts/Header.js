@@ -7,7 +7,7 @@ function Header({location}) {
     <Menu
       selectedKeys={[location.pathname]}
       mode="horizontal"
-      theme="dark"
+      theme="blue"
       className={styles.fr}
     >
       <Menu.Item>

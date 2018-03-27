@@ -1,6 +1,6 @@
-import ToDoList from '../pages/AJSL/ToDoList/index'//案件受理
-import ToHastenCaseList from '../pages/AJSL/ToHastenCaseList/index'//移交件
-import WainChangeTimeList from '../pages/AJSL/WainChangeTimeList/index'//延期审核
+import ToDoList from '../pages/AJSL/ToDoList/page'//案件受理
+import ToHastenCaseList from '../pages/AJSL/ToHastenCaseList/page'//移交件
+import WainChangeTimeList from '../pages/AJSL/WainChangeTimeList/page'//延期审核
 
 /**
  * todo ： 能否减少重复代码？

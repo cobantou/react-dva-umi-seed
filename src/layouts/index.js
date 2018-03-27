@@ -16,13 +16,17 @@ function Layouts({children, location}) {
       <Header location={location}/>
       <Layout className={styles.content}>
         <Sider/>
-        <Layout>
-          <Tabs></Tabs>
-          <Content style={{margin: '0 16px'}}>
-            <div style={{padding: 24, background: '#fff', minHeight: 360}}>
+        <Layout className={styles.tabsLayout}>
+          <div className={styles.tabs}>
+            <Tabs location={location}>
               {children}
-            </div>
-          </Content>
+            </Tabs>
+          </div>
+          {/*<Content style={{margin: '0 16px'}}>*/}
+            {/*<div style={{padding: 24, background: '#fff', minHeight: 360}}>*/}
+              {/*{children}*/}
+            {/*</div>*/}
+          {/*</Content>*/}
           <Footer className={styles.footer}>
             技术支持
           </Footer>

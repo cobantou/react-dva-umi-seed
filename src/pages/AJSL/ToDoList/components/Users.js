@@ -5,8 +5,10 @@ import styles from './Users.less';
 import { PAGE_SIZE } from '../../../../utils/constants';
 import UserModal from './UserModal';
 
+//纯函数组件
 function Users({ dispatch, list: dataSource, loading, total, page: current }) {
   function deleteHandler(id) {
+    //dispatch一个action，详见redux
     dispatch({
       type: 'users/remove',
       payload: id,
@@ -52,6 +54,26 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
       key: 'website',
     },
     {
+      title: 'Email1',
+      dataIndex: 'email1',
+      key: 'email1',
+    },
+    {
+      title: 'Website1',
+      dataIndex: 'website1',
+      key: 'website1',
+    },
+    {
+      title: 'Email2',
+      dataIndex: 'email2',
+      key: 'email2',
+    },
+    {
+      title: 'Website2',
+      dataIndex: 'website2',
+      key: 'website2',
+    },
+    {
       title: 'Operation',
       key: 'operation',
       render: (text, record) => (
@@ -81,6 +103,8 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
           dataSource={dataSource}
           rowKey={record => record.id}
           pagination={false}
+          scroll={{x: 1200}}
+
         />
         <Pagination
           className="ant-table-pagination"
@@ -95,7 +119,7 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
 }
 
 function mapStateToProps(state) {
-  const { list, total, page } = state.users;
+  const { list, total, page } = state.users;//取出对应的state
   return {
     list,
     total,
@@ -104,4 +128,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Users);
+export default connect(mapStateToProps)(Users);//redux-react,将store的state和react的组件连接

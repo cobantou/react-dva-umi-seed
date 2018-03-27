@@ -1,5 +1,6 @@
 import * as usersService from '../services/users';
 
+//antd将数据等在这里处理
 export default {
   namespace: 'users',
   state: {
@@ -7,11 +8,13 @@ export default {
     total: null,
     page: null,
   },
+  //主要是一些同步reducer
   reducers: {
     save(state, { payload: { data: list, total, page } }) {
       return { ...state, list, total, page };
     },
   },
+  //副作用，主要是一些异步
   effects: {
     *fetch({ payload: { page = 1 } }, { call, put }) {
       const { data, headers } = yield call(usersService.fetch, { page });
@@ -40,6 +43,7 @@ export default {
       yield put({ type: 'fetch', payload: { page } });
     },
   },
+  //订阅（https://github.com/dvajs/dva/blob/master/docs/API_zh-CN.md#subscriptions）
   subscriptions: {
     setup({ dispatch, history }) {
       dispatch({ type: 'fetch' ,payload:{}});
